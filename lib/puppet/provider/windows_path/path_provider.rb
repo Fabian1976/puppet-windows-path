@@ -1,8 +1,3 @@
-# win32/registry and Win32API are part of the stdlib on Windows, no extra gems
-# are required.
-require 'win32/registry.rb' 
-require 'Win32API'  
-
 # Constants for broadcasting the PATH change.
 # For details on Windows API method SendMessageTimeout see
 # http://msdn.microsoft.com/en-us/library/windows/desktop/ms644952%28v=vs.85%29.aspx
@@ -65,7 +60,16 @@ Puppet::Type.type(:windows_path).provide(:windows_path) do
 
     private
 
+    def require_windows
+      # win32/registry and Win32API are part of the stdlib on Windows, no extra gems
+      # are required.
+      require 'win32/registry.rb'
+      require 'Win32API'
+    end
+
     def fetch_target
+        require_windows
+
         @target = resource[:target] 
         debug "Target: #{@target}"
 
@@ -85,6 +89,8 @@ Puppet::Type.type(:windows_path).provide(:windows_path) do
     end
 
     def read_path
+        require_windows
+
         debug "Reading PATH from registry"
         path = nil
         begin
@@ -106,6 +112,8 @@ Puppet::Type.type(:windows_path).provide(:windows_path) do
     end
 
     def write_path(path)
+        require_windows
+
         notice "Writing new PATH: #{path}"
 
         begin
@@ -129,6 +137,8 @@ Puppet::Type.type(:windows_path).provide(:windows_path) do
 
     # Make new PATH visible without logging off and on again.
     def do_broadcast
+        require_windows
+
         sendMessageMethod = Win32API.new(DLL, API_METHOD, API_METHOD_PARAMETER_TYPES, API_METHOD_RETURN_TYPE)
 
         # For details on Windows API method SendMessageTimeout see
