@@ -14,7 +14,6 @@ windows_path {'Test: Add a path entry if it is not present':
 ->
 # (For this test to do the right thing (actually remove a path entry, you would
 #  need to add the given entry to your path manually before.)
-# the case, replace directory with something that is in your path.)
 windows_path {'Test: Remove an existing path entry':
   ensure      => absent,
   directory   => 'C:\some\path\that\should\be\removed',
