@@ -25,7 +25,7 @@ It is important that the folder where this module resisdes is named windows_path
 Usage
 -----
 
-include windows_path
+    include windows_path
 
     # Add an entry to the PATH or verify that it is already there.
     windows_path {'add a PATH entry if it is not there yet':
@@ -49,7 +49,7 @@ include windows_path
       target      => user,
     }
 
-    # The namevar is, of course, directory. 
+    # The namevar is, of course, the parameter directory.
     windows_path {'C:\add\this\also\please':
         ensure      => present,
     }
