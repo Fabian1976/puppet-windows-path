@@ -1,5 +1,5 @@
 {
-  "name": "fabian76-windows_path",
+  "name": "Fabian76-windows_path",
   "version": "0.1.1",
   "author": "Bastian Krol",
   "summary": "Manage individual entries in the Windows PATH variable as resources, that is, add and remove directories to the PATH in an idempotent manner.",
