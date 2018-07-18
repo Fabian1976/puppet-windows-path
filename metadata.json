@@ -1,0 +1,21 @@
+{
+  "name": "fabian76-windows_path",
+  "version": "0.1.1",
+  "author": "Bastian Krol",
+  "summary": "Manage individual entries in the Windows PATH variable as resources, that is, add and remove directories to the PATH in an idempotent manner.",
+  "license": "Apache-2.0",
+  "source": "https://github.com/Fabian1976/puppet-windows_path",
+  "project_page": "https://github.com/Fabian1976/puppet-windows_path",
+  "issues_url": "https://github.com/Fabian1976/puppet-windows_path/issues",
+  "operatingsystem_support": [
+    {
+      "operatingsystem": "windows",
+      "operatingsystemrelease": [
+        "2012 R2"
+      ]
+    }
+  ],
+  "dependencies": [
+    {"name":"puppetlabs/stdlib","version_requirement":">= 2.3.0"}
+  ]
+}
