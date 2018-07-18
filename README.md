@@ -1,10 +1,3 @@
-UNMAINTAINED
-============
-
-*DISCLAIMER: THIS REPOSITORY IS UNMAINTAINED!*
-
-To anyone using this or interested in it. It's up for grabs if you want to take it over and maintain it, I'd be happy to transfer it to you. Open an issue to get into contact.
-
 puppet-windows-path
 ===================
 
