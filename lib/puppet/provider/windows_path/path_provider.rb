@@ -6,9 +6,9 @@ API_METHOD = 'SendMessageTimeout'
 API_METHOD_PARAMETER_TYPES = 'LLLPLLP'
 API_METHOD_RETURN_TYPE = 'L'
 # Receiver of the message, 0xffff means broadcast (all top level windows in the system)
-HWND_BROADCAST = 0xffff
+RECV_BROADCAST = 0xffff
 # Message to send
-WM_SETTINGCHANGE = 0x001A
+MSG_SETTINGCHANGE = 0x001A
 # This means: The function returns without waiting for the time-out
 # period to elapse if the receiving thread appears to not respond or "hangs." 
 SMTO_ABORTIFHUNG = 2
@@ -144,6 +144,6 @@ Puppet::Type.type(:windows_path).provide(:windows_path) do
         # For details on Windows API method SendMessageTimeout see
         # http://msdn.microsoft.com/en-us/library/windows/desktop/ms644952%28v=vs.85%29.aspx
 
-        sendMessageMethod.call(HWND_BROADCAST, WM_SETTINGCHANGE, 0, 'Environment', SMTO_ABORTIFHUNG, BROADCAST_TIMEOUT, 0)
+        sendMessageMethod.call(RECV_BROADCAST, MSG_SETTINGCHANGE, 0, 'Environment', SMTO_ABORTIFHUNG, BROADCAST_TIMEOUT, 0)
     end    
 end
